@@ -38,6 +38,7 @@ class Product {
   final bool inStock;
   final String stockText;
   final String short;
+  final String sku;
   final int catId;
   final int subCatId;
 
@@ -57,6 +58,7 @@ class Product {
     required this.inStock,
     required this.stockText,
     required this.short,
+    this.sku = '',
     required this.catId,
     required this.subCatId,
     this.description = '',
@@ -75,6 +77,7 @@ class Product {
         inStock: j['in_stock'] == true || j['in_stock'] == 1,
         stockText: (j['stock_text'] ?? '').toString(),
         short: (j['short'] ?? '').toString(),
+        sku: (j['sku'] ?? '').toString(),
         catId: _int(j['cat_id']),
         subCatId: _int(j['sub_cat_id']),
         description: (j['description'] ?? '').toString(),
